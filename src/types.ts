@@ -1,3 +1,4 @@
+// A convenient, out-of-the-box guideline for a structured error for cases where a simple string is insufficient (typically server-side)
 export interface ResultError {
     // A numeric code signifying the type of error. This is arbitrary and should follow application standards
     code: number;
@@ -7,7 +8,7 @@ export interface ResultError {
     message: string;
 }
 
-export type Result<_Value = undefined, _Error = ResultError> =
+export type Result<_Value = undefined, _Error = string> =
     | {
           ok: true;
           value: _Value;
@@ -17,7 +18,7 @@ export type Result<_Value = undefined, _Error = ResultError> =
           error: _Error;
       };
 
-export type ResultPromise<_Value = undefined, _Error = ResultError> = Promise<Result<_Value, _Error>>;
+export type ResultPromise<_Value = undefined, _Error = string> = Promise<Result<_Value, _Error>>;
 
 export class Results {
     static success(v?: undefined): Result<undefined, never>;
@@ -27,8 +28,8 @@ export class Results {
     }
 
     static error(e?: undefined): Result<never, undefined>;
-    static error<_E = ResultError>(e: _E): Result<never, _E>;
-    static error<_E = ResultError>(e: _E): Result<never, _E> {
+    static error<_E>(e: _E): Result<never, _E>;
+    static error<_E>(e: _E): Result<never, _E> {
         return { ok: false, error: e };
     }
 

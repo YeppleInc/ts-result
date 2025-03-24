@@ -1,5 +1,11 @@
 # @yeppleinc/ts-result
 
+## 0.1.2
+
+### Patch Changes
+
+- Default error type as string
+
 ## 0.1.1
 
 ### Patch Changes
