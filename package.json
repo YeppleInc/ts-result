@@ -1,0 +1,39 @@
+{
+    "name": "@yeppleinc/ts-result",
+    "version": "0.0.1",
+    "description": "A library with the core types and utility functions for using a Result return type for invocations that may fail or succeed with an associated value or error, respectively.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YeppleInc/ts-result.git"
+    },
+    "keywords": [
+        "typescript",
+        "result",
+        "errors"
+    ],
+    "author": "jshear",
+    "bugs": {
+        "url": "https://github.com/YeppleInc/ts-result/issues"
+    },
+    "homepage": "https://github.com/YeppleInc/ts-result#readme",
+    "devDependencies": {
+        "@changesets/cli": "^2.27.10",
+        "@types/node": "^22.10.0",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2"
+    },
+    "scripts": {
+        "build": "tsup src/index.ts",
+        "changeset": "changeset",
+        "publish": "npm run build && changeset version && changeset publish"
+    },
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    }
+}
