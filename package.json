@@ -1,6 +1,6 @@
 {
     "name": "@yeppleinc/ts-result",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "A library with the core types and utility functions for using a Result return type for invocations that may fail or succeed with an associated value or error, respectively.",
     "repository": {
         "type": "git",
@@ -18,9 +18,9 @@
     "homepage": "https://github.com/YeppleInc/ts-result#readme",
     "devDependencies": {
         "@changesets/cli": "^2.27.10",
-        "@types/node": "^22.10.0",
-        "tsup": "^8.3.5",
-        "typescript": "^5.7.2"
+        "@types/node": "^22.13.9",
+        "tsup": "^8.4.0",
+        "typescript": "^5.8.2"
     },
     "scripts": {
         "build": "tsup src/index.ts",
